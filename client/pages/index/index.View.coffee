@@ -66,13 +66,13 @@ module.exports =
 
       div {className: 'content'},
         div {className: 'spacer'}
-        textarea {className: 'title composition'}
+        textarea {className: 'title composition', placeholder:'title'}
         @items.map (item) ->
           item
         div {className: 'indent'},
-          textarea {className: 'pointHeading composition', id:'pointHeading', spellCheck:'false'}
+          textarea {className: 'pointHeading composition', id:'pointHeading', spellCheck:'false', placeholder:'header'}
           div {className: 'indent'},
-            textarea {className: 'point composition', id:'point', spellCheck:'false'}
+            textarea {className: 'point composition', id:'point', spellCheck:'false', placeholder:'point'}
           input {className: 'button', type:'submit', id:'subpointSubmit', onClick: @addSubpoint, value:'Add Subpoint'}
           input {className: 'button', type:'submit', id:'pointSubmit', onClick: @addPoint, value:'Add Point'}
         #div {className: 'spacer'}
