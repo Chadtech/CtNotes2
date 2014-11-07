@@ -1,0 +1,76 @@
+.content
+  margin-right 50px
+  transition all 1s
+  .indent
+    margin-left 50px
+  .spacer
+    height 50px
+  
+  specifyFont(inputColor)
+    font-smooth never
+    -webkit-font-smoothing none
+    font-family CtCommandPrompt
+    font-size 1em
+    color inputColor
+    line-height 120%
+      
+  .heading
+    display inline-block
+    height 1.2em
+    .pointHeading
+      specifyFont(rgba(128, 128, 128, 1))
+      display inline-block
+      position relative
+      &.composition
+        height 1.2em
+      &.error
+        background #421d23
+            
+  .point
+    specifyFont(rgba(192, 192, 192, 1))
+    &.composition
+      border 2px
+      border-color rgba(64, 64, 64 1)
+      height 18em
+    &.error
+      background #421d23
+
+  .pointHeading
+    specifyFont(rgba(128, 128, 128, 1))
+    &.composition
+      border 2px
+      border-color rgba(64, 64, 64, 1)
+      height 1.2em
+    &.error
+      background #421d23
+      
+  .title
+    specifyFont(rgba(64, 64, 64, 1))
+    &.composition
+      height 1.2em
+    &.error
+      background #120202
+      
+  .button
+    transition all 0.25s
+    specifyFont(rgba(64, 64, 64, 1))
+    outline none
+    float right
+    border none
+    padding 1em
+    margin-left 1em
+    background rgba(0, 0, 0, 1)
+    &.remove
+      display inline-block
+      position relative
+      padding 0em
+      specifyFont(rgba(64, 64, 64, 1))
+      &:hover
+        color #f23d21
+        background rgba(0,0,0,1)
+        
+    &:hover
+      color rgba(128, 128, 128, 1)
+      background rgba(32, 32, 32, 1)
+      
+    
