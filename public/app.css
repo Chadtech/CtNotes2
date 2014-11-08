@@ -146,6 +146,36 @@ body {
   color: #f23d21;
   background: #000;
 }
+.content .button.edit {
+  display: inline-block;
+  position: relative;
+  padding: 0em;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-family: CtCommandPrompt;
+  font-size: 1em;
+  color: #404040;
+  line-height: 120%;
+}
+.content .button.edit:hover {
+  color: #f3d31b;
+  background: #000;
+}
+.content .button.add {
+  display: inline-block;
+  position: relative;
+  padding: 0em;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-family: CtCommandPrompt;
+  font-size: 1em;
+  color: #404040;
+  line-height: 120%;
+}
+.content .button.add:hover {
+  color: #0aca1a;
+  background: #000;
+}
 .content .button:hover {
   color: #808080;
   background: #202020;

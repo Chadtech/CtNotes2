@@ -1,7 +1,8 @@
 Fission = require 'fission'
+SyncAdapter = require 'fission-sync-localstorage'
 
 fission = new Fission
-  # Try removing this to see what happens
-  sync: -> console.log 'Sync Occured'
+  sync: SyncAdapter
+  #sync: (method, model, options) -> console.log 'Sync Occured : ', method, model, options
 
 module.exports = fission

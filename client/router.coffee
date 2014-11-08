@@ -1,16 +1,17 @@
 fissioning = require './app'
 IndexView = require './pages/Index/Index.View'
-NotFoundView = require './pages/NotFound/NotFound.View'
+viewNoteView = require './pages/viewNote/viewNote.View'
 
-# Declare a variable that is a short form of fissioning.router.route
-fissioning.router.route '/',
-  title: 'CtNotes'
+route = fissioning.router.route
+
+route '/',
+  title: 'CtNotes2'
   view: IndexView
   el: 'content'
 
-fissioning.router.route '*',
-  title: 'Not Found'
-  view: NotFoundView
+route '/view',
+  title: 'CtNotes2'
+  view: viewNoteView
   el:'content'
 
 fissioning.router.start()

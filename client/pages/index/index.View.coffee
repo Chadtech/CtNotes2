@@ -7,15 +7,18 @@ itemView = fissioning.modelView
   init: ->
     addSubpoint: false
   remove: -> 
+    console.log 'A', @model
     @model.destroy()
-    @model.save()
-  
+    console.log 'B', @model
+    #@model.save()
   render: -> 
     div {className: 'spacer'}
     div {className: 'indent'},
       div {className: 'heading'},
         p {className: 'pointHeading'}, (@model.get 'point')
         input {className:'button remove', type:'submit', onClick:@remove, value:'X'}
+        input {className:'button edit', type:'submit', onClick:@remove, value:'E'}
+        input {className:'button add', type:'submit', onClick:@remove, value:'A'}
       div {className: 'indent'}, ( (textToGive)->
         paragraph = ''
         paragraphElements = []
@@ -41,6 +44,9 @@ module.exports =
   fissioning.collectionView
     model: Notes
     itemView: itemView
+    whichPoint: 0
+    addingSubPoint: false
+    whichSubpoint: 0
     addPoint: (event) ->
       pointValue = document.getElementById('point').value 
       pointHeadingValue = document.getElementById('pointHeading').value
@@ -60,6 +66,10 @@ module.exports =
  
     addSubpoint: (event) ->
       console.log 'B'
+      console.log 'C', @whichPoint, @addingSubPoint, @whichSubpoint
+      @whichPoint++
+      console.log 'D', @whichPoint
+      console.log 'E', @items
     render: ->
       
       #done = @collection.filter (note) -> note.get('done')
@@ -75,6 +85,6 @@ module.exports =
             textarea {className: 'point composition', id:'point', spellCheck:'false', placeholder:'point'}
           input {className: 'button', type:'submit', id:'subpointSubmit', onClick: @addSubpoint, value:'Add Subpoint'}
           input {className: 'button', type:'submit', id:'pointSubmit', onClick: @addPoint, value:'Add Point'}
-        #div {className: 'spacer'}
+          input {className: 'button', type:'submit', id:'pointSubmit', onClick: @addPoint, value:'Fetch'}
 
 
